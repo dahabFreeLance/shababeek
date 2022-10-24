@@ -1,0 +1,14 @@
+# Dependencies
+/node_modules
+
+# Environment
+.env*.local
+
+# Log
+.log*.local
+
+# Misc
+.DS_Store
+
+# Scripts
+/src/util/scripts
