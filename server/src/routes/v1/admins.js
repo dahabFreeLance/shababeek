@@ -46,14 +46,6 @@ const populate = [];
  *                 lastName:
  *                   type: string
  *                   example: Hollander
- *                 gender:
- *                   type: string
- *                   enum: ['Male', 'Female']
- *                   example: Female
- *                 birthdate:
- *                   type: string
- *                   format: date-time
- *                   example: 1994-01-01T00:00:00.000Z
  *                 phoneNumber:
  *                   type: string
  *                   example: 01007683940
@@ -86,12 +78,9 @@ const populate = [];
  *         500:
  *           $ref: '#/components/responses/ServerError'
  */
-router.post('/', auth(['accessCode']), async (req, res) => {
+router.post('/', auth(['admin']), async (req, res) => {
   try {
-    const admin = new Admin({
-      ...req.body,
-      role: req.accessCode.role,
-    });
+    const admin = new Admin({ ...req.body });
 
     await admin.save();
 
@@ -553,7 +542,7 @@ router.get('/:id', auth(['admin']), async (req, res) => {
 router.patch('/me', auth(['admin']), async (req, res) => {
   try {
     const updatesKeys = Object.keys(req.body);
-    const allowedUpdatesKeys = ['firstName', 'lastName', 'gender', 'birthdate', 'phoneNumber', 'password'];
+    const allowedUpdatesKeys = ['firstName', 'lastName', 'phoneNumber', 'password'];
     const isValidOperation = updatesKeys.every((updatesKey) => allowedUpdatesKeys.includes(updatesKey));
 
     if (!isValidOperation) {
@@ -664,7 +653,7 @@ router.patch('/:id', auth(['admin']), async (req, res) => {
     }
 
     const updatesKeys = Object.keys(req.body);
-    const allowedUpdatesKeys = ['firstName', 'lastName', 'gender', 'birthdate', 'phoneNumber', 'password'];
+    const allowedUpdatesKeys = ['firstName', 'lastName', 'phoneNumber', 'password'];
     const isValidOperation = updatesKeys.every((updatesKey) => allowedUpdatesKeys.includes(updatesKey));
 
     if (!isValidOperation) {

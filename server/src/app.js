@@ -14,6 +14,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
 
 app.use('/api/v1/admins', require('./routes/v1/admins'));
+app.use('/api/v1/tables', require('./routes/v1/tables'));
+app.use('/api/v1/categories', require('./routes/v1/categories'));
+app.use('/api/v1/products', require('./routes/v1/products'));
+app.use('/api/v1/orders', require('./routes/v1/orders'));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../../client/build')));

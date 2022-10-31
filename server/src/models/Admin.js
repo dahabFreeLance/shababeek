@@ -3,11 +3,6 @@ const bcrypt = require('bcryptjs');
 const validator = require('validator');
 const jwt = require('jsonwebtoken');
 
-const minDate = new Date();
-const maxDate = new Date();
-
-minDate.setFullYear(minDate.getFullYear() - 120);
-
 /**
  * @swagger
  * components:
@@ -101,18 +96,6 @@ const adminSchema = new mongoose.Schema(
       type: String,
       required: [true, "Last name can't be blank."],
       trim: true,
-    },
-    gender: {
-      type: String,
-      enum: {
-        values: ['Male', 'Female'],
-        message: "The gender you've chosen is invalid.",
-      },
-    },
-    birthdate: {
-      type: Date,
-      min: [minDate, "The birthdate you've entered is invalid."],
-      max: [maxDate, "The birthdate you've entered is invalid."],
     },
     phoneNumber: {
       type: String,
