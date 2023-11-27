@@ -1,11 +1,8 @@
 import React from 'react';
+import Paper from '@mui/material/Paper';
 
 const Home = () => {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center ', alignItems: 'center' }}>
-      <h1> Hello Shababeek </h1>
-    </div>
-  );
+  return <dev> Hello Shababeek </dev>;
 };
 
 export default Home;
