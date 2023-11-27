@@ -1,12 +1,8 @@
-import { IconButton, Toolbar } from '@mui/material';
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
+import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Typography, styled, Badge, IconButton, Toolbar } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
-import Typography from '@mui/material/Typography';
-
-import React from 'react';
 
 function TopBar({ toggleDrawer, open }) {
   const drawerWidth = 240;
