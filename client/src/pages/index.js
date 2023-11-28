@@ -1,3 +1,4 @@
-import Home from './Home';
+import Tables from './Tables';
+import Menu from './Menu';
 
-export { Home };
+export { Tables, Menu };
