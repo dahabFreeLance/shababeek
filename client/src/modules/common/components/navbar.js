@@ -7,7 +7,7 @@ import { Settings, BarChart, ShoppingCart, People, ChevronLeft, TableRestaurant 
 function Navbar({ toggleDrawer, open }) {
   const mainListItems = (
     <React.Fragment>
-      <ListItemButton>
+      <ListItemButton href={'/'}>
         <ListItemIcon>
           <TableRestaurant />
         </ListItemIcon>

@@ -1,9 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Home } from '../../pages';
+import { Tables, Menu } from '../../pages';
 
 export const Router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <Tables />,
+  },
+  {
+    path: '/tables/:tableNumber',
+    element: <Menu />,
   },
 ]);

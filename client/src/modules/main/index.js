@@ -54,15 +54,12 @@ export default function Dashboard() {
             overflow: 'auto',
           }}>
           <Toolbar />
-          <Container maxWidth='lg' sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth='lg' sx={{ mt: 4, mb: 4, backgroundColor: '#fff' }}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={8} lg={9}>
                 <Paper
                   sx={{
                     p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
                   }}>
                   <RouterProvider router={Router} />
                 </Paper>
